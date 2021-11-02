@@ -1,42 +1,7 @@
 import { css } from "@linaria/core";
+import { Issue } from "../components/Issue";
+import { Header } from "../templates/Header";
 import { theme } from "../theme";
-
-const Header = () => {
-  return (
-    <nav
-      className={css`
-        max-width: ${theme.breakpoints.xl}px;
-        margin: ${theme.spacing * 3}px auto;
-
-        display: flex;
-        justify-content: space-between;
-
-        ul {
-          display: flex;
-          gap: ${theme.spacing * 4}px;
-        }
-      `}
-    >
-      <ul>
-        <li>
-          <a
-            className={css`
-              font-weight: bold;
-            `}
-            href="/"
-          >
-            FIREBRICKS
-          </a>
-        </li>
-        <li>
-          <a href="/">Projects</a>
-        </li>
-      </ul>
-
-      <div>Logged in as Anonymous</div>
-    </nav>
-  );
-};
 
 export const IndexPage = () => {
   return (
@@ -48,9 +13,22 @@ export const IndexPage = () => {
           max-width: ${theme.breakpoints.xl}px;
           margin: 0 auto;
           margin-top: ${theme.spacing * 4}px;
+
+          display: grid;
+          grid-template-columns: auto 300px;
+          gap: ${theme.spacing * 2}px;
         `}
       >
-        hello, world!
+        <Issue
+          title="#1 ドッグフーディングを行う"
+          caption="- 2021年10月21日 15:22:13"
+        >
+          タスク管理サービスを作って、タスク管理サービスのタスクをそのサービスで管理するのみんな考えるやつっぽさがある
+          <br />
+          わかりみ
+        </Issue>
+
+        <div>Sidebar</div>
       </div>
     </div>
   );
